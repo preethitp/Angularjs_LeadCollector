@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LEAD COLLECTOR</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="lead.js"></script>
+	<style>
+		hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+} 
+
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  
+}
+
+.right {
+  right: 0;
+ 
+}
+</style>
+  </head>
+<body>
+
+	<div ng-app = "myApp" class = "container" >
+		<div ng-controller = "ContactController">
+
+			<div class="split left">
+
+				<h1 ><center>LEAD COLLECTOR</center></h1>
+				<form role = "form" class="well">
+				<div class = "form-group">
+					<label for = "name"> Name:  </label>
+					<input type = "text" id = "name" class = "form-control" placeholder = "Enter Name " ng-model = "newcontact.name">
+				</div>
+				<div class = "form-group">
+					<label for = "regno"> Regno:  </label>
+					<input type = "text" id = "regno" class = "form-control" placeholder = "Enter regno " ng-model = "newcontact.regno">
+				</div>
+				<div class = "form-group">
+					<label for = "regno"> Year:  </label>
+					<input type = "text" id = "year" class = "form-control" placeholder = "Enter year of study " ng-model = "newcontact.year">
+				</div>
+				<div class = "form-group">
+					<label for = "phone"> Phone:  </label>
+					<input type = "text" id = "phone" class = "form-control" placeholder = "Enter Phone " ng-model = "newcontact.phone">
+				</div>
+				<div class = "form-group">
+				<label for="category">Category:( click the below to select)</label>
+				<select name="category" id="category" class = "form-control"  ng-model = "newcontact.category">
+				<option value="onlineclass">Onlineclass</option>
+				<option value="hostel">Hostel</option>
+				<option value="assignment">Assignment</option>
+				<option value="others">Others</option>
+				</select>
+				</div>
+				<div class = "form-group">
+				<label for = "queries"> Post your query:  </label>
+					<input type = "text" id = "queries" class = "form-control" placeholder = "Enter queries " ng-model = "newcontact.queries">
+				</div>
+				<br>
+				<input type="hidden" ng-model="newcontact.id">
+
+				<input type="button" class="btn btn-primary" ng-click="saveContact()" class="btn btn-primary" value = "Submit">
+				</form>
+
+				<div my-customer></div>&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="window.print();"target="_blank" style="cursor:pointer;" role = "button" class = "btn btn-primary">print </a>
+			</div>
+			<div class="split right">
+				
+				<h1 ><center>LEAD REVIEW</center></h1>
+				<table  class = "table table-striped table-bordered table-hover">
+					<thead>
+						<tr class = "info">
+							<th>Name</th>
+							<th>Regno</th>
+	            <th>Year</th>
+							<th>Phone</th>
+	            <th>Category</th>
+	            <th>Query</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat = "contact in contacts ">
+							 <td>{{ contact.name }}</td>
+							 <td>{{ contact.regno }}</td>
+	            <td>{{ contact.year }}</td>
+							 <td>{{ contact.phone }}</td>
+	            <td>{{ contact.category}}</td>
+	            <td>{{ contact.queries }}</td>
+			
+							 <td>
+								<a href="#" ng-click="edit(contact.id)" role = "button" class = "btn btn-info">edit</a> &nbsp;
+								<a href="#" ng-click="delete(contact.id)" role = "button" class = "btn btn-danger">delete</a>&nbsp;
+								<a href="#" ng-click="count = count + 1" ng-init="count=0" role = "button" class = "btn btn-info">count</a>&nbsp;&nbsp;{{count}}
+
+							</td>
+
+						</tr>
+
+					</tbody>
+				</table>
+		
+	    		<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+				<br>
+				
+
+			<div ng-controller="ChildController">
+				
+				<table class = "table table-striped table-bordered table-hover">
+				<thead>
+				<tr class = "info">
+					
+				<th>Category</th>
+				<th>Query</th>
+					
+				</tr>
+				</thead>
+				<tr>
+				         
+				<button role = "button" class="btn btn-primary" ng-click="orderByMe('category')"><center>Click to View BASED ON CATEGORY</center></button><br>
+				</tr>
+				<br>
+				<tbody ng-repeat="contact in contacts | orderBy:myOrderBy">
+				<tr >
+				<td>{{contact.category}}</td>
+				<td>{{contact.queries}}</td>
+
+
+				</tr>
+				</tbody>
+				</table>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<hr style="height:2px;border-width:2px;color:gray;background-color:gray">
+				<br>
+			
+			</div>
+
+		<button ng-click="generateRandom()" role = "button" class="btn btn-primary"> 
+		Click To Know Your Faculty In-charge
+		</button> 
+		<br> 
+		<h3>For Further Resolvements Contanct <b> {{randomNumber}}</b> of IT Department</h3>
+
+			
+		
+		
+		</div>
+
+		 
+       
+    
+	</div>
+
+  
+</body>
+</html>
