@@ -1,0 +1,29 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT studInfo (stud)+>
+<!ATTLIST studInfo
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT stud (name,dept,phno,regno,lead)>
+<!ATTLIST stud
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT dept (#PCDATA)>
+<!ATTLIST dept
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT phno (#PCDATA)>
+<!ATTLIST phno
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT regno (#PCDATA)>
+<!ATTLIST regno
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT lead (#PCDATA)>
+<!ATTLIST lead
+  xmlns CDATA #FIXED ''>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="lead.xsl"?>
+<!DOCTYPE studInfo SYSTEM "lead.dtd">
+<studInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="lead.xsd">
+<stud>
+<name>Abhilash</name>
+<dept>IT</dept>
+<phno>97709205001</phno>
+<regno>100</regno>
+<lead>xxxxxxx</lead>
+</stud>
+<stud>
+<name>Akhila</name>
+<dept>IT</dept>
+<phno>97709205002</phno>
+<regno>101</regno>
+<lead>yyyyyyyy</lead>
+</stud>
+<stud>
+<name>Anaswara</name>
+<dept>IT</dept>
+<phno>97709205003</phno>
+<regno>102</regno>
+<lead>zzzzzzzz</lead>
+</stud>
+<stud>
+<name>preethi</name>
+<dept>IT</dept>
+<phno>97709205002</phno>
+<regno>101</regno>
+<lead>yyyyyyyy</lead>
+</stud>
+<stud>
+<name>Swethaa</name>
+<dept>IT</dept>
+<phno>97709205002</phno>
+<regno>101</regno>
+<lead>yyyyyyyy</lead>
+</stud>
+<stud>
+<name>Ayyu</name>
+<dept>IT</dept>
+<phno>97709205003</phno>
+<regno>102</regno>
+<lead>zzzzzzzz</lead>
+</stud>
+</studInfo>

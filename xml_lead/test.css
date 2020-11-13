@@ -1,0 +1,13 @@
+Name,regno,phone,category,lead {
+  display: table-cell;
+  padding: 2px;
+  margin: 2px;
+  border: thin solid;
+}
+record {
+  display: table;
+  margin: 2em;
+}
+standing {
+  display: table-row;
+}

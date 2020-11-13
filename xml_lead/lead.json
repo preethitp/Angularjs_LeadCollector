@@ -1,0 +1,48 @@
+{
+	"studInfo": {
+		"stud": [
+			{
+				"name": "Abhilash",
+				"dept": "IT",
+				"phno": "97709205001",
+				"regno": "100",
+				"lead": "xxxxxxx"
+			},
+			{
+				"name": "Akhila",
+				"dept": "IT",
+				"phno": "97709205002",
+				"regno": "101",
+				"lead": "yyyyyyyy"
+			},
+			{
+				"name": "Anaswara",
+				"dept": "IT",
+				"phno": "97709205003",
+				"regno": "102",
+				"lead": "zzzzzzzz"
+			},
+			{
+				"name": "preethi",
+				"dept": "IT",
+				"phno": "97709205002",
+				"regno": "101",
+				"lead": "yyyyyyyy"
+			},
+			{
+				"name": "Swethaa",
+				"dept": "IT",
+				"phno": "97709205002",
+				"regno": "101",
+				"lead": "yyyyyyyy"
+			},
+			{
+				"name": "Ayyu",
+				"dept": "IT",
+				"phno": "97709205003",
+				"regno": "102",
+				"lead": "zzzzzzzz"
+			}
+		]
+	}
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body  style="background-color:#fff0b3">
+<h2 style="font-weight: bold;"><strong>The Faculty Incharge for the Student list :</strong></h2>
+<p style="font-weight: bold; font-size: 30px" id="demo"></p>
+
+<script>
+var parser, xmlDoc;
+var text = "<lead><Faculty>" +
+"<name>Ms.Julie Samson</name>" +
+"<role>Professor</role>" +
+"</Faculty></lead>";
+
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(text,"text/xml");
+
+document.getElementById("demo").innerHTML =
+xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+</script>
+
+</body>
+</html>
